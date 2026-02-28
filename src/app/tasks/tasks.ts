@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task';
 import { JsonPipe, NgForOf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })

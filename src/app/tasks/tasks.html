@@ -1,5 +1,20 @@
-@for (task of tasks; track task.id) {
-    <li>
-  {{ task.title }} – {{ task.user.username }} – {{ task.user.id }} - {{ task.status }}
-</li>
-}
+<div class="row">
+  @for (task of tasks; track task.id) {
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card mb-3 rounded-2 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-end">
+          <div class="left mt-2">
+            <h5 class="card-title">{{ task.title }}</h5>
+            <span class="badge" [ngClass]="task.status === 'done' ? 'bg-success' : 'bg-warning'">{{ task.status
+              }}</span>
+          </div>
+          <div class="right">
+            <p class="card-text">{{ task.user.username }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
