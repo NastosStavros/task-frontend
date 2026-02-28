@@ -1,1 +1,5 @@
-<p>{{ tasks | json }}</p>
+@for (task of tasks; track task.id) {
+    <li>
+  {{ task.title }} – {{ task.user.username }} – {{ task.user.id }} - {{ task.status }}
+</li>
+}
